@@ -21,8 +21,8 @@
             <h2>Adaptive Quotient Filter</h2>
             
             <div class="project-image">
-                <img src="../images/aqf-placeholder.jpg" alt="Adaptive Quotient Filter" style="width: 100%; max-width: 600px; height: auto;">
-                <p><em>Add your representative image here</em></p>
+                <img src="../images/aqf.png" alt="Adaptive Quotient Filter" style="width: 100%; max-width: 600px; height: auto;">
+                <p><em>Structure of a quotient filter</em></p>
             </div>
 
             <div class="project-meta">
@@ -32,13 +32,36 @@
 
             <div class="project-abstract">
                 <h3>Abstract</h3>
-                <p>Designed the Adaptive Quotient Filter (AQF), the first filter with strong adaptivity. The AQF is 10 times faster than other adaptive filter designs for insertion and the same throughput for queries while also being dynamic, mergeable, resizable, and giving stronger error guarantees.</p>
-                <p><em>Add full abstract here</em></p>
+                <p>Filters tradeoff accuracy for space and occasionally return false positive matches with a bounded error. Numerous systems use filters
+                in fast memory to avoid performing expensive I/Os to slow storage. A fundamental limitation in traditional filters is that they do
+                not change their representation upon seeing a false positive match. Therefore, the maximum false positive rate is only guaranteed for
+                a single and not an arbitrary set of queries. We can improve the
+                filter’s performance on a stream of queries (especially on skewed
+                distributions) if we can adapt after seeing false positives.</p>
+                <p>Adaptive filters, such as telescoping and adaptive cuckoo filters,
+                update their representation upon detecting a false positive to avoid
+                repeating the same error in the future. Adaptive filters require an
+                auxiliary structure, typically much larger than the main filter and
+                often residing on slow storage, to facilitate adaptation.</p>
+                <p>However, existing adaptive filters are not practical and have seen
+                no adoption in real-world systems due to two main reasons. Firstly,
+                they offer weak adaptivity guarantees, meaning that fixing a new
+                false positive can cause a previously fixed false positive to come back.
+                Secondly, the sub-optimal design of the auxiliary structure results in
+                adaptivity overheads so substantial that they can actually diminish
+                the overall system performance compared to a traditional filter.</p>
+                <p>In this paper, we design and implement AdaptiveQF, the first
+                practical adaptive filter with minimal adaptivity overhead and strong
+                adaptivity guarantees, which means that the performance and falsepositive guarantees continue to hold even for adversarial workloads.</p>
+                <p>The AdaptiveQF is based on the state-of-the-art quotient filter design and preserves all the critical features of the quotient filter such
+                as cache efficiency and mergeability. Furthermore, we employ a new
+                auxiliary structure design which results in considerably low adaptivity overhead and makes the AdaptiveQF practical in real systems.</p>
+
             </div>
 
             <div class="project-links">
-                <a href="#" class="project-link">Paper PDF</a>
-                <a href="#" class="project-link">GitHub Repository</a>
+                <a href="https://dl.acm.org/doi/10.1145/3677128" class="project-link">Paper PDF</a>
+                <a href="https://github.com/splatlab/adaptiveqf" class="project-link">GitHub Repository</a>
             </div>
         </section>
     </main>
