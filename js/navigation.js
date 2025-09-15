@@ -2,14 +2,13 @@
 function createNavigation() {
     const currentPath = window.location.pathname;
     const isProjectPage = currentPath.includes('/projects/');
-    const basePath = isProjectPage ? '../' : '';
     
     if (isProjectPage) {
         return `
-            <a href="${basePath}index.html#about">About</a>
-            <a href="${basePath}index.html">Research</a>
-            <a href="${basePath}index.html#publications">Publications</a>
-            <a href="${basePath}index.html#contact">Contact</a>
+            <a href="/#about">About</a>
+            <a href="/">Research</a>
+            <a href="/#publications">Publications</a>
+            <a href="/#contact">Contact</a>
         `;
     } else {
         return `
