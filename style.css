@@ -99,6 +99,62 @@ h3 {
     text-decoration: underline;
 }
 
+/* Project page styles */
+.project-detail {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-image {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.project-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-meta {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    margin: 20px 0;
+}
+
+.project-abstract {
+    margin: 30px 0;
+}
+
+.project-links {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.project-link {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+}
+
+header h1 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 10px;
