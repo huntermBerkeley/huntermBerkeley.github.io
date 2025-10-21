@@ -24,24 +24,42 @@
             <h2>Concurrent GPU Hash Tables</h2>
             
             <div class="project-image">
-                <img src="../images/gpu-hash-tables-placeholder.jpg" alt="Concurrent GPU Hash Tables" style="width: 100%; max-width: 600px; height: auto;">
+                <img src="../images/new_adv.svg" alt="Concurrent GPU Hash Tables" style="width: 100%; max-width: 600px; height: auto;">
                 <p><em>Add your representative image here</em></p>
             </div>
 
             <div class="project-meta">
                 <p><strong>Authors:</strong> Hunter McCoy, Prashant Pandey</p>
-                <p><strong>Status:</strong> Under Review</p>
+                <p><strong>Status:</strong>Accepted to ALENEX`26</p>
             </div>
 
             <div class="project-abstract">
                 <h3>Abstract</h3>
-                <p>Implemented a new suite of concurrent, highly efficient GPU Hash tables. Showed that external synchronization is necessary for correctness on insertions and deletions, but that specialized load instruction can perform memory safe lock-free loads on the GPU. These tables have peak performance of over 4 billion operations per second while still allowing for complete sequential memory correctness.</p>
-                <p><em>Add full abstract here</em></p>
+                <p>GPU hash tables are increasingly used to
+accelerate data processing, but their limited functionality
+restricts adoption in large-scale data processing applications.
+Current limitations include incomplete concurrency support
+and missing compound operations such as upserts.</p>
+                <p>This paper presents WarpSpeed, a library of highperformance concurrent GPU hash tables with a unified
+benchmarking framework for performance analysis.
+WarpSpeed implements eight state-of-the-art Nvidia GPU
+hash table designs and provides a rich API designed for
+modern GPU applications. Our evaluation uses diverse
+benchmarks to assess both correctness and scalability, and
+we demonstrate real-world impact by integrating these
+hash tables into three downstream applications.</p>
+                <p>We propose several optimization techniques to
+reduce concurrency overhead, including fingerprint-based
+metadata to minimize cache line probes and specialized
+Nvidia GPU instructions for lock-free queries. Our findings
+provide new insights into concurrent GPU hash table
+design and offer practical guidance for developing efficient,
+scalable data structures on modern GPUs.</p>
             </div>
 
             <div class="project-links">
-                <a href="#" class="project-link">Paper PDF</a>
-                <a href="#" class="project-link">GitHub Repository</a>
+                <a href="https://arxiv.org/pdf/2509.16407" class="project-link">Paper PDF</a>
+                <a href="https://github.com/saltsystemslab/warpSpeed" class="project-link">GitHub Repository</a>
             </div>
         </section>
     </main>

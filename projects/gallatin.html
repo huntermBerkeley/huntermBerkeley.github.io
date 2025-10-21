@@ -24,8 +24,7 @@
             <h2>Gallatin: A General-Purpose GPU Memory Manager</h2>
             
             <div class="project-image">
-                <img src="../images/gallatin-placeholder.jpg" alt="Gallatin GPU Memory Manager" style="width: 100%; max-width: 600px; height: auto;">
-                <p><em>Add your representative image here</em></p>
+                <img src="../images/gallatin.svg" alt="Gallatin GPU Memory Manager" style="width: 100%; max-width: 600px; height: auto;">
             </div>
 
             <div class="project-meta">
@@ -35,13 +34,14 @@
 
             <div class="project-abstract">
                 <h3>Abstract</h3>
-                <p>Designed a concurrent GPU memory Manager Gallatin, which uses a parallel ensemble of van Emde Boas (vEB) trees to efficiently partition GPU memory. Automatic thread coalescing and a three-tiered slabbing technique allow for small allocations to be given at up to 12.6 billion allocations per second. This results in a GPU allocator with raw throughput up to 374 times faster than the state of the art, translating to 1.5 times performance gains on real-world dynamic graph benchmarking.</p>
-                <p><em>Add full abstract here</em></p>
+                <p>Dynamic memory management is critical for efficiently porting modern data processing pipelines to GPUs. However, building a general-purpose dynamic memory manager on GPUs is challenging due to the massive parallelism and weak memory coherence. Existing state-of-the-art GPU memory managers, Ouroboros and Reg-Eff, employ traditional data structures such as arrays and linked lists to manage memory objects. They build specialized pipelines to achieve performance for a fixed set of allocation sizes and fall back to the CUDA allocator for allocating large sizes. In the process, they lose general-purpose usability and fail to support critical applications such as streaming graph processing.</p>
+                <p>In this paper, we introduce Gallatin, a general-purpose and high-performance GPU memory manager. Gallatin uses the van Emde Boas (vEB) tree data structure to manage memory objects efficiently and supports allocations of any size. Furthermore, we develop a highly-concurrent GPU implementation of the vEB tree which can be broadly used in other GPU applications. It supports constant time insertions, deletions, and successor operations for a given memory size.</p>
+                <p>In our evaluation, we compare Gallatin with state-of-the-art specialized allocator variants. Gallatin is up to 374× faster on single-sized allocations and up to 264× faster on mixed-size allocations than the next-best allocator. In scalability benchmarks, Gallatin is up to 254× times faster than the next-best allocator as the number of threads increases. For the graph benchmarks, Gallatin is 1.5× faster than the state-of-the-art for bulk insertions, slightly faster for bulk deletions, and is 3× faster than the next-best allocator for all graph expansion tests.</p>
             </div>
 
             <div class="project-links">
-                <a href="#" class="project-link">Paper PDF</a>
-                <a href="#" class="project-link">GitHub Repository</a>
+                <a href="https://dl.acm.org/doi/10.1145/3627535.3638499" class="project-link">Paper PDF</a>
+                <a href="https://github.com/saltsystemslab/gallatin" class="project-link">GitHub Repository</a>
             </div>
         </section>
     </main>

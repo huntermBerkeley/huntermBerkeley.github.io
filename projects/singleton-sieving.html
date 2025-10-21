@@ -24,7 +24,7 @@
             <h2>Singleton Sieving</h2>
             
             <div class="project-image">
-                <img src="../images/singleton-sieving-placeholder.jpg" alt="Singleton Sieving" style="width: 100%; max-width: 600px; height: auto;">
+                <img src="../images/analysis_pipeline.png" alt="Singleton Sieving" style="width: 100%; max-width: 600px; height: auto;">
                 <p><em>Add your representative image here</em></p>
             </div>
 
@@ -35,13 +35,13 @@
 
             <div class="project-abstract">
                 <h3>Abstract</h3>
-                <p>Integrated our GPU filters into a massively parallel GPU application, the de-novo metagenomic assembler MetaHipMer2. This resulted in an up to 5.4 times reduction in memory use in the k-mer analysis phase and a 40% reduction in total memory use across the entire assembler.</p>
-                <p><em>Add full abstract here</em></p>
+                <p>Traditional filter data structures, such as Bloom filters, do not offer necessary features that modern high-performance data analytics applications need in order to efficiently perform complex data analysis tasks. For example, MetaHipMer, a de novo metagenome assembler, can use filters to weed out singleton k-mers and reduce memory usage by 30%-70%. However, the filter needs the ability to associate values with k-mers in order to perform the analysis in a single communication pass. Bloom filters do not support value associations and cause the application to perform an extra communication pass, thereby increasing the run time. Therefore, MetaHipMer faces a trade off between memory and speed due to the limited capabilities of traditional filters. In this paper, we overcome the memory and speed trade off in MetaHipMer by integrating a GPU-based feature-rich filter, the Two-Choice filter (TCF), in the MetaHipMer pipeline. The TCF uses key-value association to approximately store k-mers with extensions. This allows MetaHipMer to perform k-mer analysis on the GPUs in a single communication pass. Our empirical analysis shows a 50% reduction in memory usage in k-mer analysis on each node in MetaHipMer without any effect on the overall run time or assembly quality. The memory reduction in turn results in a 43% reduction in the number of nodes required to assemble datasets and enables MetaHipMer to scale to much larger datasets.</p>
+                
             </div>
 
             <div class="project-links">
-                <a href="#" class="project-link">Paper PDF</a>
-                <a href="#" class="project-link">GitHub Repository</a>
+                <a href="https://escholarship.org/uc/item/4c50z9pk" class="project-link">Paper PDF</a>
+                <a href="https://github.com/saltsystemslab/gpu-filters" class="project-link">GitHub Repository</a>
             </div>
         </section>
     </main>
