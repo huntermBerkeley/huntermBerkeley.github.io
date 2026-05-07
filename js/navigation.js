@@ -1,27 +1,24 @@
-// Shared navigation for all pages
 function createNavigation() {
-    const currentPath = window.location.pathname;
-    const isProjectPage = currentPath.includes('/projects/');
-    
-    if (isProjectPage) {
-        return `
+    return `
+        <div class="navbar-brand">
+            <a href="/">Hunter McCoy</a>
+        </div>
+        <button class="navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">&#9776;</button>
+        <div class="navbar-links" id="nav-links">
             <a href="/#about">About</a>
-            <a href="/">Research</a>
+            <a href="/#research">Research</a>
             <a href="/#publications">Publications</a>
+            <a href="/blog/">Blog</a>
             <a href="/#contact">Contact</a>
-        `;
-    } else {
-        return `
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
-        `;
-    }
+        </div>
+    `;
 }
 
-// Insert navigation when page loads
-document.addEventListener('DOMContentLoaded', function() {
+function toggleNav() {
+    document.getElementById('nav-links').classList.toggle('open');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
     const navElement = document.querySelector('nav');
     if (navElement) {
         navElement.innerHTML = createNavigation();

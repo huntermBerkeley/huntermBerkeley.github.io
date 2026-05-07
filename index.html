@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunter McCoy - Computer Science Researcher</title>
+    <meta name="description" content="Hunter McCoy — PhD student in Computer Science at Northeastern University, researching GPU data structures and parallel computing.">
+    <title>Hunter McCoy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Hunter McCoy</h1>
-        <p>PhD Student in Computer Science</p>
+        <nav>
+            <!-- Navigation populated by JavaScript -->
+        </nav>
     </header>
-
-    <nav>
-        <!-- Navigation populated by JavaScript -->
-    </nav>
 
     <main>
         <section id="about">
-            <h2>About</h2>
-            <p>I am a PhD student in Computer Science at Northeastern University, advised by Prashant Pandey. My research focuses on high-performance parallel data structures for accelerators such as GPUs, parallel computing, and high-performance optimization. I have extensive experience with C++, Python, MPI, OpenMP, CUDA, and UPC++.</p>
-            
+            <div class="bio-intro">
+                <h1>Hunter McCoy</h1>
+                <p class="bio-subtitle">PhD Student in Computer Science &middot; Northeastern University</p>
+                <p class="bio-advisor">Advised by Prashant Pandey &middot; SALT Systems Lab</p>
+                <div class="social-links">
+                    <a href="mailto:mccoy.hu@northeastern.edu">Email</a>
+                    <a href="https://github.com/huntermBerkeley">GitHub</a>
+                </div>
+            </div>
+
+            <p class="bio-text">I am a PhD student in Computer Science at Northeastern University, advised by Prashant Pandey. My research focuses on high-performance parallel data structures for accelerators such as GPUs, parallel computing, and high-performance optimization. I have extensive experience with C++, Python, MPI, OpenMP, CUDA, and UPC++.</p>
+
             <h3>Education</h3>
             <div class="education-item">
-                <strong>Northeastern University</strong> - PhD in Computer Science (Jan 2025 - May 2027)<br>
+                <strong>Northeastern University</strong> — PhD in Computer Science (Jan 2025 – May 2027)<br>
                 Advisor: Prashant Pandey
             </div>
             <div class="education-item">
-                <strong>University of Utah</strong> - MS in Computer Science (Aug 2022 - Dec 2024)<br>
+                <strong>University of Utah</strong> — MS in Computer Science (Aug 2022 – Dec 2024)<br>
                 GPA: 4.00
             </div>
             <div class="education-item">
-                <strong>UC Berkeley</strong> - BS in Electrical Engineering and Computer Science (Aug 2018 - May 2021)<br>
+                <strong>UC Berkeley</strong> — BS in Electrical Engineering and Computer Science (Aug 2018 – May 2021)<br>
                 GPA: 3.61
             </div>
         </section>
@@ -54,31 +61,49 @@
 
         <section id="publications">
             <h2>Publications</h2>
+
             <div class="publication">
-                <h3><a href="projects/gpu-hash-tables.html">Concurrent GPU Hash Tables</a></h3>
+                <h3>
+                    <a href="projects/andes.html">Andes: A GPU Task Scheduling Framework</a>
+                    <span class="badge badge-review">Under Review · SC 26</span>
+                </h3>
                 <p><strong>Authors:</strong> Hunter McCoy, Prashant Pandey</p>
-                <p><strong>Venue:</strong> Alenex 2026</p>
             </div>
+
             <div class="publication">
-                <h3><a href="projects/fastcc.html">FaSTCC: Fast Sparse Tensor Contractions on CPUs</a></h3>
-                <p><strong>Authors:</strong> Saurabh Raje, Hunter McCoy, Prashant Pandey, Atanas Rountev, P. Sadayappan</p>
-                <p><strong>Venue:</strong> Supercomputing 2026</p>
+                <h3>
+                    <a href="projects/gpu-hash-tables.html">Concurrent GPU Hash Tables</a>
+                    <span class="badge badge-accepted">Accepted · ALENEX 26</span>
+                </h3>
+                <p><strong>Authors:</strong> Hunter McCoy, Prashant Pandey</p>
             </div>
+
+            <div class="publication">
+                <h3>
+                    <a href="projects/fastcc.html">FaSTCC: Fast Sparse Tensor Contractions on CPUs</a>
+                    <span class="badge badge-accepted">Accepted · SC 25</span>
+                </h3>
+                <p><strong>Authors:</strong> Saurabh Raje, Hunter McCoy, Prashant Pandey, Atanas Rountev, P. Sadayappan</p>
+            </div>
+
             <div class="publication">
                 <h3><a href="projects/adaptive-quotient-filter.html">Adaptive Quotient Filter</a></h3>
                 <p><strong>Authors:</strong> Richard Wen, David Tench, Hunter McCoy, Guido Tagliavini, Michael A. Bender, Alex Conway, Martin Farach-Colton, Rob Johnson, Prashant Pandey</p>
                 <p><strong>Venue:</strong> SIGMOD 2025</p>
             </div>
+
             <div class="publication">
                 <h3><a href="projects/gallatin.html">Gallatin: A General-Purpose GPU Memory Manager</a></h3>
                 <p><strong>Authors:</strong> Hunter McCoy, Prashant Pandey</p>
                 <p><strong>Venue:</strong> PPOPP 2024</p>
             </div>
+
             <div class="publication">
                 <h3><a href="projects/singleton-sieving.html">Singleton Sieving</a></h3>
                 <p><strong>Authors:</strong> Hunter McCoy, Steven Hofmeyr, Katherine Yelick, Prashant Pandey</p>
                 <p><strong>Venue:</strong> ACDA 2023</p>
             </div>
+
             <div class="publication">
                 <h3><a href="projects/gpu-filters.html">High-Performance Filters for GPUs</a></h3>
                 <p><strong>Authors:</strong> Hunter McCoy, Steven Hofmeyr, Katherine Yelick, Prashant Pandey</p>
@@ -88,12 +113,13 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: mccoy.hu@northeastern.edu</p>
+            <p>Email: <a href="mailto:mccoy.hu@northeastern.edu">mccoy.hu@northeastern.edu</a></p>
             <p>Phone: 502.507.7349</p>
             <p>Address: 6943 S Twin Aspen Cove, Salt Lake City, UT 84121</p>
             <p>GitHub: <a href="https://github.com/huntermBerkeley">huntermBerkeley</a></p>
         </section>
     </main>
+
     <script src="js/navigation.js"></script>
 </body>
 </html>

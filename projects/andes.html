@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andes: A GPU Task Scheduling Framework - Hunter McCoy</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation populated by JavaScript -->
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <h2>Andes: A GPU Task Scheduling Framework</h2>
+
+            <div class="project-meta">
+                <p><strong>Authors:</strong> Hunter McCoy, Prashant Pandey</p>
+                <p><strong>Venue:</strong> Under Review at SC 26</p>
+            </div>
+
+            <div class="project-abstract">
+                <h3>Abstract</h3>
+                <p>
+                    GPU programming today follows a host-centric model: the CPU orchestrates every kernel launch, acting as a scheduler that must synchronize with the device between stages. This model works well for regular, bulk-synchronous workloads, but breaks down for algorithms with irregular or data-dependent parallelism — graph traversal, adaptive mesh refinement, iterative solvers, and producer-consumer pipelines — where the amount of work at each stage is unknown ahead of time and host round-trips become a bottleneck.
+                </p>
+                <p>
+                    We introduce Andes, a GPU task scheduling framework that eliminates the CPU from the execution loop entirely. Andes exposes a composable, type-safe dataflow API — built around primitives such as <code>transform</code>, <code>filter</code>, <code>reduce</code>, <code>for_each</code>, and <code>subflow</code> — which programmers use to express task graphs as functional pipelines. Once submitted, the entire execution proceeds on the device through a round-based persistent executor that uses CUDA Dynamic Parallelism (CDP2) with tail-launch semantics: each scheduling round launches the next from within the GPU itself, with no host involvement.
+                </p>
+                <p>
+                    A central contribution of Andes is automatic kernel fusion. Adjacent fusable operations in a pipeline — sequences of transforms and filters — are detected at compile time and merged into a single kernel, eliminating redundant passes over global memory without any programmer annotation. Task scheduling is managed by three rotating <code>MultiQueue</code> instances that organize work by thread requirements, while a dedicated holder queue defers tasks awaiting asynchronous <code>DeviceFuture</code> results. Andes integrates with the Gallatin GPU memory manager to support dynamic task spawning with low-overhead device-side allocation throughout execution.
+                </p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/saltsystemslab/andes" class="project-link">GitHub Repository</a>
+            </div>
+        </section>
+    </main>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>
