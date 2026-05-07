@@ -18,9 +18,40 @@ function toggleNav() {
     document.getElementById('nav-links').classList.toggle('open');
 }
 
+function injectFooter() {
+    const footer = document.createElement('footer');
+    footer.innerHTML = `&copy; ${new Date().getFullYear()} Hunter McCoy`;
+    document.body.appendChild(footer);
+}
+
+function highlightActiveSection() {
+    const sections = document.querySelectorAll('main section[id]');
+    if (!sections.length) return;
+
+    const links = document.querySelectorAll('.navbar-links a');
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                links.forEach(a => a.classList.remove('active'));
+                const active = document.querySelector(
+                    `.navbar-links a[href="/#${entry.target.id}"]`
+                );
+                if (active) active.classList.add('active');
+            });
+        },
+        { rootMargin: '-10% 0px -80% 0px' }
+    );
+
+    sections.forEach(s => observer.observe(s));
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const navElement = document.querySelector('nav');
     if (navElement) {
         navElement.innerHTML = createNavigation();
     }
+    injectFooter();
+    highlightActiveSection();
 });
