@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasper: GPU-Accelerated ANNS - Hunter McCoy</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation populated by JavaScript -->
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <h2>Jasper — GPU-Accelerated ANNS: Quantized for Speed, Built for Change</h2>
+
+            <div class="project-image">
+                <img src="../images/jasper.png" alt="Jasper batch-parallel graph construction pipeline" style="width: 100%; max-width: 600px; height: auto;">
+                <p><em>Jasper's batch-parallel graph construction pipeline</em></p>
+            </div>
+
+            <div class="project-meta">
+                <p><strong>Authors:</strong> Hunter McCoy, Zikun Wang, Prashant Pandey</p>
+                <p><strong>Venue:</strong> VLDB 2026</p>
+            </div>
+
+            <div class="project-abstract">
+                <h3>Abstract</h3>
+                <p>Approximate nearest neighbor search (ANNS) is a core problem in machine learning and information retrieval. GPUs offer a promising path to high-performance ANNS through massive parallelism and co-location with downstream applications, but current GPU indices face three limitations: inability to update without full rebuilds, lack of efficient quantization for high-dimensional vectors, and poor latency hiding due to data-dependent memory accesses.</p>
+                <p>We present Jasper, a GPU-native ANNS system built on the Vamana graph index that achieves both high query throughput and full updatability via three new techniques: (1) a batch-parallel construction algorithm enabling lock-free streaming insertions, (2) a GPU-efficient RaBitQ implementation that reduces memory footprint up to 8× without random access penalties, and (3) an optimized search kernel with improved compute utilization and latency hiding.</p>
+                <p>Across five datasets, Jasper achieves up to 1.84× higher throughput than CAGRA, the current state-of-the-art GPU index, while providing updatability that CAGRA lacks, constructs indices 7.0× faster on average, and delivers 10–74× faster queries than BANG, the previous fastest GPU Vamana implementation.</p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://dl.acm.org/doi/10.14778/3836663.3836698" class="project-link">Paper PDF</a>
+                <a href="https://github.com/saltsystemslab/jasper" class="project-link">GitHub Repository</a>
+            </div>
+        </section>
+    </main>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>
